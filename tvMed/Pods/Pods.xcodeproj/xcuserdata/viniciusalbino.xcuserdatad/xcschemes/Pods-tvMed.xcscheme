@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '3EE3F5AFE300F34A066A65BE'
+               BlueprintIdentifier = 'F80639E50BACBBC099A67D2E'
                BlueprintName = 'Pods-tvMed'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-tvMed.a'>
+               BuildableName = 'Pods_tvMed.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

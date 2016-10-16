@@ -16,7 +16,27 @@
 		2C18DE9E1DB3323000797EDE /* tvMedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C18DE9D1DB3323000797EDE /* tvMedTests.swift */; };
 		2C18DEA91DB3323000797EDE /* tvMedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C18DEA81DB3323000797EDE /* tvMedUITests.swift */; };
 		2C18DEB81DB3327400797EDE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C18DEB71DB3327400797EDE /* GoogleService-Info.plist */; };
-		6FBA57C48A2C607C20D75880 /* libPods-tvMed.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C7C71255F470F2F9A8AD0D2 /* libPods-tvMed.a */; };
+		2C675F5C1DB3D9C2001FCF69 /* AnnotatedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C675F5B1DB3D9C2001FCF69 /* AnnotatedTextField.swift */; };
+		2C675F631DB3E564001FCF69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C675F601DB3E3A5001FCF69 /* User.swift */; };
+		2C675F661DB3E972001FCF69 /* KeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C675F651DB3E972001FCF69 /* KeyboardToolbar.swift */; };
+		2C675F691DB3EA7D001FCF69 /* UITextField+Toolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C675F681DB3EA7D001FCF69 /* UITextField+Toolbar.m */; };
+		2C675F6B1DB3EACC001FCF69 /* ZBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C675F6A1DB3EACC001FCF69 /* ZBarButtonItem.swift */; };
+		2C675F6D1DB3EB0D001FCF69 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C675F6C1DB3EB0D001FCF69 /* UIView+Ext.swift */; };
+		2C675F6F1DB3EB4B001FCF69 /* Arrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C675F6E1DB3EB4B001FCF69 /* Arrow.swift */; };
+		2C675F711DB3EB75001FCF69 /* TextFieldFirstResponderBouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C675F701DB3EB75001FCF69 /* TextFieldFirstResponderBouncer.swift */; };
+		2C675F751DB3EC9D001FCF69 /* BaseControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C675F731DB3EC9D001FCF69 /* BaseControllerProtocol.swift */; };
+		2C675F761DB3EC9D001FCF69 /* LoadingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C675F741DB3EC9D001FCF69 /* LoadingProtocol.swift */; };
+		2C675F781DB3ED0E001FCF69 /* ValidatesPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C675F771DB3ED0E001FCF69 /* ValidatesPassword.swift */; };
+		2C675F7A1DB3ED4D001FCF69 /* String+Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C675F791DB3ED4D001FCF69 /* String+Conversion.swift */; };
+		2C675F7C1DB3EDAF001FCF69 /* ValidatesUsername.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C675F7B1DB3EDAF001FCF69 /* ValidatesUsername.swift */; };
+		2C675F811DB3F2B3001FCF69 /* UIAlertView+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C675F7E1DB3F2B3001FCF69 /* UIAlertView+Block.m */; };
+		2C675F821DB3F2B3001FCF69 /* UIAlertView+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C675F801DB3F2B3001FCF69 /* UIAlertView+Helper.m */; };
+		2C675F851DB3F2F8001FCF69 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C675F841DB3F2F8001FCF69 /* NSString+Utils.m */; };
+		2C675F891DB3F4FA001FCF69 /* FirebaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C675F881DB3F4FA001FCF69 /* FirebaseConnection.swift */; };
+		2CA0A53F1DB3D44800CE7EBB /* ThirdPartyToolsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0A53E1DB3D44800CE7EBB /* ThirdPartyToolsLoader.swift */; };
+		2CA0A5411DB3D56500CE7EBB /* FirebaseToolLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0A5401DB3D56500CE7EBB /* FirebaseToolLoader.swift */; };
+		2CA0A5451DB3D70D00CE7EBB /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0A5441DB3D70D00CE7EBB /* LoginTableViewController.swift */; };
+		6A39C6EE42E29793CBA46F0F /* Pods_tvMed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 290B16BA2586DFBA46279A17 /* Pods_tvMed.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		290B16BA2586DFBA46279A17 /* Pods_tvMed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvMed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C18DE831DB3323000797EDE /* tvMed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvMed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C18DE861DB3323000797EDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C18DE881DB3323000797EDE /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -52,8 +73,33 @@
 		2C18DEA81DB3323000797EDE /* tvMedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvMedUITests.swift; sourceTree = "<group>"; };
 		2C18DEAA1DB3323000797EDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C18DEB71DB3327400797EDE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2C675F5B1DB3D9C2001FCF69 /* AnnotatedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotatedTextField.swift; sourceTree = "<group>"; };
+		2C675F601DB3E3A5001FCF69 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2C675F621DB3E4AE001FCF69 /* tvMed-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "tvMed-Bridging-Header.h"; sourceTree = "<group>"; };
+		2C675F651DB3E972001FCF69 /* KeyboardToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardToolbar.swift; sourceTree = "<group>"; };
+		2C675F671DB3EA7D001FCF69 /* UITextField+Toolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITextField+Toolbar.h"; path = "Extensions/UITextField+Toolbar.h"; sourceTree = "<group>"; };
+		2C675F681DB3EA7D001FCF69 /* UITextField+Toolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITextField+Toolbar.m"; path = "Extensions/UITextField+Toolbar.m"; sourceTree = "<group>"; };
+		2C675F6A1DB3EACC001FCF69 /* ZBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZBarButtonItem.swift; sourceTree = "<group>"; };
+		2C675F6C1DB3EB0D001FCF69 /* UIView+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Ext.swift"; path = "Extensions/UIView+Ext.swift"; sourceTree = "<group>"; };
+		2C675F6E1DB3EB4B001FCF69 /* Arrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arrow.swift; sourceTree = "<group>"; };
+		2C675F701DB3EB75001FCF69 /* TextFieldFirstResponderBouncer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldFirstResponderBouncer.swift; sourceTree = "<group>"; };
+		2C675F731DB3EC9D001FCF69 /* BaseControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseControllerProtocol.swift; sourceTree = "<group>"; };
+		2C675F741DB3EC9D001FCF69 /* LoadingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingProtocol.swift; sourceTree = "<group>"; };
+		2C675F771DB3ED0E001FCF69 /* ValidatesPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatesPassword.swift; sourceTree = "<group>"; };
+		2C675F791DB3ED4D001FCF69 /* String+Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Conversion.swift"; path = "Extensions/String+Conversion.swift"; sourceTree = "<group>"; };
+		2C675F7B1DB3EDAF001FCF69 /* ValidatesUsername.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatesUsername.swift; sourceTree = "<group>"; };
+		2C675F7D1DB3F2B3001FCF69 /* UIAlertView+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Block.h"; path = "Extensions/UIAlertView+Block.h"; sourceTree = "<group>"; };
+		2C675F7E1DB3F2B3001FCF69 /* UIAlertView+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Block.m"; path = "Extensions/UIAlertView+Block.m"; sourceTree = "<group>"; };
+		2C675F7F1DB3F2B3001FCF69 /* UIAlertView+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertView+Helper.h"; path = "Extensions/UIAlertView+Helper.h"; sourceTree = "<group>"; };
+		2C675F801DB3F2B3001FCF69 /* UIAlertView+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertView+Helper.m"; path = "Extensions/UIAlertView+Helper.m"; sourceTree = "<group>"; };
+		2C675F831DB3F2F8001FCF69 /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Utils.h"; path = "Extensions/NSString+Utils.h"; sourceTree = "<group>"; };
+		2C675F841DB3F2F8001FCF69 /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Utils.m"; path = "Extensions/NSString+Utils.m"; sourceTree = "<group>"; };
+		2C675F881DB3F4FA001FCF69 /* FirebaseConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseConnection.swift; sourceTree = "<group>"; };
+		2CA0A53E1DB3D44800CE7EBB /* ThirdPartyToolsLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdPartyToolsLoader.swift; sourceTree = "<group>"; };
+		2CA0A5401DB3D56500CE7EBB /* FirebaseToolLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseToolLoader.swift; sourceTree = "<group>"; };
+		2CA0A5421DB3D65000CE7EBB /* tvMed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tvMed.entitlements; sourceTree = "<group>"; };
+		2CA0A5441DB3D70D00CE7EBB /* LoginTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
 		5A424E0C830D9C1CB52E8AA3 /* Pods-tvMed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvMed.release.xcconfig"; path = "Pods/Target Support Files/Pods-tvMed/Pods-tvMed.release.xcconfig"; sourceTree = "<group>"; };
-		5C7C71255F470F2F9A8AD0D2 /* libPods-tvMed.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tvMed.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C289A243FB23AC21772BCEC6 /* Pods-tvMed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvMed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tvMed/Pods-tvMed.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,7 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FBA57C48A2C607C20D75880 /* libPods-tvMed.a in Frameworks */,
+				6A39C6EE42E29793CBA46F0F /* Pods_tvMed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,11 +154,18 @@
 		2C18DE851DB3323000797EDE /* tvMed */ = {
 			isa = PBXGroup;
 			children = (
+				2C675F861DB3F4E1001FCF69 /* Networking */,
+				2C675F641DB3E972001FCF69 /* Utils */,
+				2C675F5E1DB3E394001FCF69 /* Models */,
+				2C675F5A1DB3D9C2001FCF69 /* CustomViews */,
+				2C675F591DB3D8AB001FCF69 /* Extensions */,
+				2CA0A5431DB3D6CE00CE7EBB /* Storyboards */,
+				2CA0A53D1DB3D42D00CE7EBB /* ThirdParty */,
+				2CA0A53B1DB3D1B300CE7EBB /* Controllers */,
 				2C18DEB61DB3326600797EDE /* SupportingFiles */,
 				2C18DE861DB3323000797EDE /* AppDelegate.swift */,
 				2C18DE881DB3323000797EDE /* FirstViewController.swift */,
 				2C18DE8A1DB3323000797EDE /* SecondViewController.swift */,
-				2C18DE8C1DB3323000797EDE /* Main.storyboard */,
 				2C18DE8F1DB3323000797EDE /* Assets.xcassets */,
 				2C18DE911DB3323000797EDE /* LaunchScreen.storyboard */,
 				2C18DE941DB3323000797EDE /* Info.plist */,
@@ -141,15 +194,130 @@
 		2C18DEB61DB3326600797EDE /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				2C675F621DB3E4AE001FCF69 /* tvMed-Bridging-Header.h */,
+				2CA0A5421DB3D65000CE7EBB /* tvMed.entitlements */,
 				2C18DEB71DB3327400797EDE /* GoogleService-Info.plist */,
 			);
 			name = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		2C675F591DB3D8AB001FCF69 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2C675F831DB3F2F8001FCF69 /* NSString+Utils.h */,
+				2C675F841DB3F2F8001FCF69 /* NSString+Utils.m */,
+				2C675F7D1DB3F2B3001FCF69 /* UIAlertView+Block.h */,
+				2C675F7E1DB3F2B3001FCF69 /* UIAlertView+Block.m */,
+				2C675F7F1DB3F2B3001FCF69 /* UIAlertView+Helper.h */,
+				2C675F801DB3F2B3001FCF69 /* UIAlertView+Helper.m */,
+				2C675F791DB3ED4D001FCF69 /* String+Conversion.swift */,
+				2C675F6C1DB3EB0D001FCF69 /* UIView+Ext.swift */,
+				2C675F671DB3EA7D001FCF69 /* UITextField+Toolbar.h */,
+				2C675F681DB3EA7D001FCF69 /* UITextField+Toolbar.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		2C675F5A1DB3D9C2001FCF69 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				2C675F6E1DB3EB4B001FCF69 /* Arrow.swift */,
+				2C675F6A1DB3EACC001FCF69 /* ZBarButtonItem.swift */,
+				2C675F5B1DB3D9C2001FCF69 /* AnnotatedTextField.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		2C675F5E1DB3E394001FCF69 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2C675F5F1DB3E398001FCF69 /* User */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		2C675F5F1DB3E398001FCF69 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				2C675F601DB3E3A5001FCF69 /* User.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		2C675F641DB3E972001FCF69 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2C675F721DB3EC9D001FCF69 /* Protocols */,
+				2C675F701DB3EB75001FCF69 /* TextFieldFirstResponderBouncer.swift */,
+				2C675F651DB3E972001FCF69 /* KeyboardToolbar.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2C675F721DB3EC9D001FCF69 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2C675F7B1DB3EDAF001FCF69 /* ValidatesUsername.swift */,
+				2C675F731DB3EC9D001FCF69 /* BaseControllerProtocol.swift */,
+				2C675F741DB3EC9D001FCF69 /* LoadingProtocol.swift */,
+				2C675F771DB3ED0E001FCF69 /* ValidatesPassword.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2C675F861DB3F4E1001FCF69 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2C675F871DB3F4E9001FCF69 /* Firebase */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		2C675F871DB3F4E9001FCF69 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				2C675F881DB3F4FA001FCF69 /* FirebaseConnection.swift */,
+			);
+			name = Firebase;
+			sourceTree = "<group>";
+		};
+		2CA0A53B1DB3D1B300CE7EBB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2CA0A53C1DB3D1BD00CE7EBB /* Login */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		2CA0A53C1DB3D1BD00CE7EBB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2CA0A5441DB3D70D00CE7EBB /* LoginTableViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		2CA0A53D1DB3D42D00CE7EBB /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				2CA0A53E1DB3D44800CE7EBB /* ThirdPartyToolsLoader.swift */,
+				2CA0A5401DB3D56500CE7EBB /* FirebaseToolLoader.swift */,
+			);
+			name = ThirdParty;
+			sourceTree = "<group>";
+		};
+		2CA0A5431DB3D6CE00CE7EBB /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2C18DE8C1DB3323000797EDE /* Main.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
 		68851B6ECF005DBD029258F0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5C7C71255F470F2F9A8AD0D2 /* libPods-tvMed.a */,
+				290B16BA2586DFBA46279A17 /* Pods_tvMed.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -236,6 +404,11 @@
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = X97239WSZ8;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					2C18DE981DB3323000797EDE = {
 						CreatedOnToolsVersion = 7.3;
@@ -350,9 +523,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C675F761DB3EC9D001FCF69 /* LoadingProtocol.swift in Sources */,
 				2C18DE8B1DB3323000797EDE /* SecondViewController.swift in Sources */,
+				2C675F821DB3F2B3001FCF69 /* UIAlertView+Helper.m in Sources */,
+				2C675F5C1DB3D9C2001FCF69 /* AnnotatedTextField.swift in Sources */,
+				2CA0A53F1DB3D44800CE7EBB /* ThirdPartyToolsLoader.swift in Sources */,
+				2C675F7C1DB3EDAF001FCF69 /* ValidatesUsername.swift in Sources */,
+				2CA0A5411DB3D56500CE7EBB /* FirebaseToolLoader.swift in Sources */,
+				2C675F711DB3EB75001FCF69 /* TextFieldFirstResponderBouncer.swift in Sources */,
+				2C675F661DB3E972001FCF69 /* KeyboardToolbar.swift in Sources */,
+				2C675F691DB3EA7D001FCF69 /* UITextField+Toolbar.m in Sources */,
+				2C675F631DB3E564001FCF69 /* User.swift in Sources */,
 				2C18DE871DB3323000797EDE /* AppDelegate.swift in Sources */,
+				2C675F6D1DB3EB0D001FCF69 /* UIView+Ext.swift in Sources */,
 				2C18DE891DB3323000797EDE /* FirstViewController.swift in Sources */,
+				2C675F751DB3EC9D001FCF69 /* BaseControllerProtocol.swift in Sources */,
+				2C675F851DB3F2F8001FCF69 /* NSString+Utils.m in Sources */,
+				2C675F891DB3F4FA001FCF69 /* FirebaseConnection.swift in Sources */,
+				2C675F781DB3ED0E001FCF69 /* ValidatesPassword.swift in Sources */,
+				2C675F6B1DB3EACC001FCF69 /* ZBarButtonItem.swift in Sources */,
+				2CA0A5451DB3D70D00CE7EBB /* LoginTableViewController.swift in Sources */,
+				2C675F811DB3F2B3001FCF69 /* UIAlertView+Block.m in Sources */,
+				2C675F7A1DB3ED4D001FCF69 /* String+Conversion.swift in Sources */,
+				2C675F6F1DB3EB4B001FCF69 /* Arrow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,8 +641,11 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "tvMed/tvMed-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "Pods/SVProgressHUD/**";
 			};
 			name = Debug;
 		};
@@ -487,7 +683,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "tvMed/tvMed-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "Pods/SVProgressHUD/**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -497,12 +696,15 @@
 			baseConfigurationReference = C289A243FB23AC21772BCEC6 /* Pods-tvMed.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = tvMed/tvMed.entitlements;
 				DEVELOPMENT_TEAM = X97239WSZ8;
 				INFOPLIST_FILE = tvMed/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.br.tvMed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
@@ -512,6 +714,8 @@
 			baseConfigurationReference = 5A424E0C830D9C1CB52E8AA3 /* Pods-tvMed.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = tvMed/tvMed.entitlements;
 				DEVELOPMENT_TEAM = X97239WSZ8;
 				INFOPLIST_FILE = tvMed/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
