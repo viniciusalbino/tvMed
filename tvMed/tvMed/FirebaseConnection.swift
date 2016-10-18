@@ -11,17 +11,24 @@ import FirebaseAuth
 
 typealias DefaultCallBackClosure = (User?, String?) -> ()
 
+typealias MoviesCallbackClosure = ([NSURL]?) -> ()
+
 class FirebaseConnection: NSObject {
     
     class func registerUser(userEmail:String!, userPassword:String!, callback:DefaultCallBackClosure) -> (){
         FIRAuth.auth()?.createUserWithEmail(userEmail, password: userPassword, completion: { user, error in
-            callback(User(authData:user!),self.treatFirebaseError(error))
+            callback(User(),self.treatFirebaseError(error))
         })
     }
     
     class func loginUser(userEmail:String!, userPassword:String!, callback:DefaultCallBackClosure) -> () {
         FIRAuth.auth()?.signInWithEmail(userEmail, password: userPassword, completion: { user, error in
-            callback(User(authData:user!),self.treatFirebaseError(error))
+            if let firebaseUser = user {
+                callback(User(uid: firebaseUser.uid, email: firebaseUser.email!),self.treatFirebaseError(error))
+            }
+            else {
+                callback(User(uid:"sda",email:""),self.treatFirebaseError(error))
+            }
         })
     }
     
@@ -33,8 +40,24 @@ class FirebaseConnection: NSObject {
         switch errorTreated.code {
         case 17007:
             return "O e-mail já esta sendo utilizado."
+        case 17009:
+            return "Senha ou usuário incorreto."
         default:
             return "Ocorreu um erro ao registrar o usuário."
         }
+    }
+
+    class func getMoviesForUser(user:User, callback: MoviesCallbackClosure) {
+        let ref = FIRDatabase.database().referenceWithPath(user.uid)
+        
+        ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            var movies = [NSURL]()
+            for child in snapshot.children {
+                let snapshot = child.children.allObjects.first as! FIRDataSnapshot
+                movies.append(NSURL(string: snapshot.value! as! String)!)
+            }
+            print(movies)
+            callback(movies)
+        })
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C02A1511DB5AC3500EF6CB6 /* KeychainWrapperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C02A1501DB5AC3500EF6CB6 /* KeychainWrapperManager.swift */; };
 		2C18DE871DB3323000797EDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C18DE861DB3323000797EDE /* AppDelegate.swift */; };
 		2C18DE891DB3323000797EDE /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C18DE881DB3323000797EDE /* FirstViewController.swift */; };
 		2C18DE8B1DB3323000797EDE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C18DE8A1DB3323000797EDE /* SecondViewController.swift */; };
@@ -33,6 +34,7 @@
 		2C675F821DB3F2B3001FCF69 /* UIAlertView+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C675F801DB3F2B3001FCF69 /* UIAlertView+Helper.m */; };
 		2C675F851DB3F2F8001FCF69 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C675F841DB3F2F8001FCF69 /* NSString+Utils.m */; };
 		2C675F891DB3F4FA001FCF69 /* FirebaseConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C675F881DB3F4FA001FCF69 /* FirebaseConnection.swift */; };
+		2C6EE1D41DB5B734005CC7A4 /* MoviesAvaiableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6EE1D31DB5B734005CC7A4 /* MoviesAvaiableTableViewController.swift */; };
 		2CA0A53F1DB3D44800CE7EBB /* ThirdPartyToolsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0A53E1DB3D44800CE7EBB /* ThirdPartyToolsLoader.swift */; };
 		2CA0A5411DB3D56500CE7EBB /* FirebaseToolLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0A5401DB3D56500CE7EBB /* FirebaseToolLoader.swift */; };
 		2CA0A5451DB3D70D00CE7EBB /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0A5441DB3D70D00CE7EBB /* LoginTableViewController.swift */; };
@@ -58,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		290B16BA2586DFBA46279A17 /* Pods_tvMed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvMed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C02A1501DB5AC3500EF6CB6 /* KeychainWrapperManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapperManager.swift; sourceTree = "<group>"; };
 		2C18DE831DB3323000797EDE /* tvMed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvMed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C18DE861DB3323000797EDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C18DE881DB3323000797EDE /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 		2C675F831DB3F2F8001FCF69 /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Utils.h"; path = "Extensions/NSString+Utils.h"; sourceTree = "<group>"; };
 		2C675F841DB3F2F8001FCF69 /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Utils.m"; path = "Extensions/NSString+Utils.m"; sourceTree = "<group>"; };
 		2C675F881DB3F4FA001FCF69 /* FirebaseConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseConnection.swift; sourceTree = "<group>"; };
+		2C6EE1D31DB5B734005CC7A4 /* MoviesAvaiableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesAvaiableTableViewController.swift; sourceTree = "<group>"; };
 		2CA0A53E1DB3D44800CE7EBB /* ThirdPartyToolsLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdPartyToolsLoader.swift; sourceTree = "<group>"; };
 		2CA0A5401DB3D56500CE7EBB /* FirebaseToolLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseToolLoader.swift; sourceTree = "<group>"; };
 		2CA0A5421DB3D65000CE7EBB /* tvMed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tvMed.entitlements; sourceTree = "<group>"; };
@@ -129,6 +133,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C02A14F1DB5AC2500EF6CB6 /* KeychainWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				2C02A1501DB5AC3500EF6CB6 /* KeychainWrapperManager.swift */,
+			);
+			name = KeychainWrapper;
+			sourceTree = "<group>";
+		};
 		2C18DE7A1DB3323000797EDE = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +166,7 @@
 		2C18DE851DB3323000797EDE /* tvMed */ = {
 			isa = PBXGroup;
 			children = (
+				2C02A14F1DB5AC2500EF6CB6 /* KeychainWrapper */,
 				2C675F861DB3F4E1001FCF69 /* Networking */,
 				2C675F641DB3E972001FCF69 /* Utils */,
 				2C675F5E1DB3E394001FCF69 /* Models */,
@@ -281,9 +294,18 @@
 			name = Firebase;
 			sourceTree = "<group>";
 		};
+		2C6EE1D21DB5B719005CC7A4 /* MoviesToEdit */ = {
+			isa = PBXGroup;
+			children = (
+				2C6EE1D31DB5B734005CC7A4 /* MoviesAvaiableTableViewController.swift */,
+			);
+			name = MoviesToEdit;
+			sourceTree = "<group>";
+		};
 		2CA0A53B1DB3D1B300CE7EBB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2C6EE1D21DB5B719005CC7A4 /* MoviesToEdit */,
 				2CA0A53C1DB3D1BD00CE7EBB /* Login */,
 			);
 			name = Controllers;
@@ -539,11 +561,13 @@
 				2C18DE891DB3323000797EDE /* FirstViewController.swift in Sources */,
 				2C675F751DB3EC9D001FCF69 /* BaseControllerProtocol.swift in Sources */,
 				2C675F851DB3F2F8001FCF69 /* NSString+Utils.m in Sources */,
+				2C6EE1D41DB5B734005CC7A4 /* MoviesAvaiableTableViewController.swift in Sources */,
 				2C675F891DB3F4FA001FCF69 /* FirebaseConnection.swift in Sources */,
 				2C675F781DB3ED0E001FCF69 /* ValidatesPassword.swift in Sources */,
 				2C675F6B1DB3EACC001FCF69 /* ZBarButtonItem.swift in Sources */,
 				2CA0A5451DB3D70D00CE7EBB /* LoginTableViewController.swift in Sources */,
 				2C675F811DB3F2B3001FCF69 /* UIAlertView+Block.m in Sources */,
+				2C02A1511DB5AC3500EF6CB6 /* KeychainWrapperManager.swift in Sources */,
 				2C675F7A1DB3ED4D001FCF69 /* String+Conversion.swift in Sources */,
 				2C675F6F1DB3EB4B001FCF69 /* Arrow.swift in Sources */,
 			);

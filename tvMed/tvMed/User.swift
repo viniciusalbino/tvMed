@@ -11,16 +11,40 @@ import FirebaseAuth
 
 class User: NSObject {
     
-    let uid: String
-    let email: String
+    var uid = ""
+    var email = ""
     
-    init(authData: FIRUser) {
+    
+    func start (authData: FIRUser) {
         uid = authData.uid
         email = authData.email!
     }
     
-    init(uid: String, email: String) {
+    override init() {
+        super.init()
+    }
+    
+    convenience init(uid: String, email: String) {
+        self.init()
         self.uid = uid
         self.email = email
+    }
+    
+    func getUserDict() -> NSDictionary {
+        return ["uid" : self.uid,
+                "email" : self.email]
+    }
+    
+    class func parseUser(dict:NSDictionary) -> User {
+        let newUser = User(uid: dict.objectForKey("uid") as! String, email: dict.objectForKey("email") as! String)
+        return newUser
+    }
+    
+    func saveUser() {
+        KeychainWrapperManager.saveUser(self)
+    }
+    
+    func deleteUser() {
+        KeychainWrapperManager.deleteUser()
     }
 }

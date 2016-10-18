@@ -18,7 +18,15 @@ class LoginTableViewController: UITableViewController,KeyboardToolbarDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Login"
+        self.checkLoggedUser()
         self.addInputFields()
+    }
+    
+    func checkLoggedUser()  {
+        guard KeychainWrapperManager.checkLoggedUser() else {
+            return
+        }
+        self.performSegueWithIdentifier("homePush", sender: self)
     }
     
     override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -59,7 +67,8 @@ class LoginTableViewController: UITableViewController,KeyboardToolbarDelegate, U
             }
             
             self.stopLoading()
-            print("logged in")
+            user?.saveUser()
+            self.performSegueWithIdentifier("homePush", sender: self)
         }
     }
     
@@ -115,9 +124,9 @@ class LoginTableViewController: UITableViewController,KeyboardToolbarDelegate, U
                         UIAlertView.showDefaultAlertWithMessage(error!)
                         return
                     }
-                    
+                    user?.saveUser()
                     self.stopLoading()
-                    print("logged in")
+                    self.performSegueWithIdentifier("homePush", sender: self)
                 })
             })
         }
