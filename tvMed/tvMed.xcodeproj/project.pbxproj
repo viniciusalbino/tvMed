@@ -11,7 +11,6 @@
 		2C02A1511DB5AC3500EF6CB6 /* KeychainWrapperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C02A1501DB5AC3500EF6CB6 /* KeychainWrapperManager.swift */; };
 		2C10546B1DB6F37300BFAF54 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10546A1DB6F37300BFAF54 /* Movie.swift */; };
 		2C18DE871DB3323000797EDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C18DE861DB3323000797EDE /* AppDelegate.swift */; };
-		2C18DE891DB3323000797EDE /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C18DE881DB3323000797EDE /* FirstViewController.swift */; };
 		2C18DE8B1DB3323000797EDE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C18DE8A1DB3323000797EDE /* SecondViewController.swift */; };
 		2C18DE8E1DB3323000797EDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C18DE8C1DB3323000797EDE /* Main.storyboard */; };
 		2C18DE901DB3323000797EDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C18DE8F1DB3323000797EDE /* Assets.xcassets */; };
@@ -67,7 +66,6 @@
 		2C10546A1DB6F37300BFAF54 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		2C18DE831DB3323000797EDE /* tvMed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvMed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C18DE861DB3323000797EDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2C18DE881DB3323000797EDE /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		2C18DE8A1DB3323000797EDE /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		2C18DE8D1DB3323000797EDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C18DE8F1DB3323000797EDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -189,7 +187,6 @@
 				2CA0A53B1DB3D1B300CE7EBB /* Controllers */,
 				2C18DEB61DB3326600797EDE /* SupportingFiles */,
 				2C18DE861DB3323000797EDE /* AppDelegate.swift */,
-				2C18DE881DB3323000797EDE /* FirstViewController.swift */,
 				2C18DE8A1DB3323000797EDE /* SecondViewController.swift */,
 				2C18DE8F1DB3323000797EDE /* Assets.xcassets */,
 				2C18DE911DB3323000797EDE /* LaunchScreen.storyboard */,
@@ -589,7 +586,6 @@
 				2C675F631DB3E564001FCF69 /* User.swift in Sources */,
 				2C18DE871DB3323000797EDE /* AppDelegate.swift in Sources */,
 				2C675F6D1DB3EB0D001FCF69 /* UIView+Ext.swift in Sources */,
-				2C18DE891DB3323000797EDE /* FirstViewController.swift in Sources */,
 				2C675F751DB3EC9D001FCF69 /* BaseControllerProtocol.swift in Sources */,
 				2C0277D21DB6FBF90069715F /* FabricTool.swift in Sources */,
 				2C675F851DB3F2F8001FCF69 /* NSString+Utils.m in Sources */,

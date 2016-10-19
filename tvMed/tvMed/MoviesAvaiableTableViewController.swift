@@ -12,10 +12,18 @@ class MoviesAvaiableTableViewController: UITableViewController, LoadingProtocol 
     
     var movies = [Movie]()
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.startLoading()
+        self.getVideos()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Vídeos"
-        self.startLoading()
+    }
+    
+    func getVideos() {
         if let user = KeychainWrapperManager.getUser() {
             FirebaseConnection.getMoviesForUser(user, callback: { movies in
                 self.stopLoading()
