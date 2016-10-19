@@ -9,6 +9,8 @@ pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
 pod 'SVProgressHUD'
+pod 'Fabric'
+pod 'Crashlytics'
 end
 
 target 'tvMedTests' do

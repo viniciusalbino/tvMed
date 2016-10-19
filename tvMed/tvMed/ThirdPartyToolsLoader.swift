@@ -23,5 +23,6 @@ class ThirdPartyToolsLoader: NSObject {
     
     func loadTools(application: UIApplication) {
         FirebaseToolLoader.loadTool(application)
+        FabricTracker.loadTool(application)
     }
 }

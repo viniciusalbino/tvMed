@@ -203,10 +203,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" id="1Tp-Br-DJf">
-                                <rect key="frame" x="0.0" y="119.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Tp-Br-DJf" id="Zq6-Pz-BQD">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -222,11 +222,11 @@
             </objects>
             <point key="canvasLocation" x="1609" y="-45"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="f4y-Jr-kPg">
             <objects>
                 <navigationController id="khi-VY-33q" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Nee-48-pFf"/>
+                    <tabBarItem key="tabBarItem" title="" id="Nee-48-pFf"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lci-vp-2zm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
