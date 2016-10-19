@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C02A1511DB5AC3500EF6CB6 /* KeychainWrapperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C02A1501DB5AC3500EF6CB6 /* KeychainWrapperManager.swift */; };
+		2C10546B1DB6F37300BFAF54 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10546A1DB6F37300BFAF54 /* Movie.swift */; };
 		2C18DE871DB3323000797EDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C18DE861DB3323000797EDE /* AppDelegate.swift */; };
 		2C18DE891DB3323000797EDE /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C18DE881DB3323000797EDE /* FirstViewController.swift */; };
 		2C18DE8B1DB3323000797EDE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C18DE8A1DB3323000797EDE /* SecondViewController.swift */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		290B16BA2586DFBA46279A17 /* Pods_tvMed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvMed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C02A1501DB5AC3500EF6CB6 /* KeychainWrapperManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapperManager.swift; sourceTree = "<group>"; };
+		2C10546A1DB6F37300BFAF54 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		2C18DE831DB3323000797EDE /* tvMed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvMed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C18DE861DB3323000797EDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C18DE881DB3323000797EDE /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,14 @@
 				2C02A1501DB5AC3500EF6CB6 /* KeychainWrapperManager.swift */,
 			);
 			name = KeychainWrapper;
+			sourceTree = "<group>";
+		};
+		2C1054691DB6F36500BFAF54 /* Movie */ = {
+			isa = PBXGroup;
+			children = (
+				2C10546A1DB6F37300BFAF54 /* Movie.swift */,
+			);
+			name = Movie;
 			sourceTree = "<group>";
 		};
 		2C18DE7A1DB3323000797EDE = {
@@ -244,6 +254,7 @@
 		2C675F5E1DB3E394001FCF69 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2C1054691DB6F36500BFAF54 /* Movie */,
 				2C675F5F1DB3E398001FCF69 /* User */,
 			);
 			name = Models;
@@ -553,6 +564,7 @@
 				2C675F7C1DB3EDAF001FCF69 /* ValidatesUsername.swift in Sources */,
 				2CA0A5411DB3D56500CE7EBB /* FirebaseToolLoader.swift in Sources */,
 				2C675F711DB3EB75001FCF69 /* TextFieldFirstResponderBouncer.swift in Sources */,
+				2C10546B1DB6F37300BFAF54 /* Movie.swift in Sources */,
 				2C675F661DB3E972001FCF69 /* KeyboardToolbar.swift in Sources */,
 				2C675F691DB3EA7D001FCF69 /* UITextField+Toolbar.m in Sources */,
 				2C675F631DB3E564001FCF69 /* User.swift in Sources */,

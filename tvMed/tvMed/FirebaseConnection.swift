@@ -11,7 +11,7 @@ import FirebaseAuth
 
 typealias DefaultCallBackClosure = (User?, String?) -> ()
 
-typealias MoviesCallbackClosure = ([NSURL]?) -> ()
+typealias MoviesCallbackClosure = ([Movie]?) -> ()
 
 class FirebaseConnection: NSObject {
     
@@ -51,12 +51,25 @@ class FirebaseConnection: NSObject {
         let ref = FIRDatabase.database().referenceWithPath(user.uid)
         
         ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
-            var movies = [NSURL]()
+            var movies = [Movie]()
+            
             for child in snapshot.children {
-                let snapshot = child.children.allObjects.first as! FIRDataSnapshot
-                movies.append(NSURL(string: snapshot.value! as! String)!)
+                let snapshot = child.children.allObjects as! [FIRDataSnapshot]
+                for item in snapshot {
+                    
+                    let movie = Movie()
+                    let movieURL = item.childSnapshotForPath("video") as FIRDataSnapshot
+                    let movieName = item.childSnapshotForPath("nome") as FIRDataSnapshot
+                    
+                    if let tempUrl = movieURL.value as? String, let tempName = movieName.value as? String {
+                        if let url = NSURL(string:tempUrl) {
+                            movie.movieURL = url
+                        }
+                        movie.movieName = tempName
+                        movies.append(movie)
+                    }
+                }
             }
-            print(movies)
             callback(movies)
         })
     }
