@@ -8,6 +8,8 @@
 
 import Foundation
 import Alamofire
+import MediaPlayer
+import MobileCoreServices
 
 class MoviesAvaiableTableViewController: UITableViewController, LoadingProtocol {
     
@@ -81,6 +83,7 @@ class MoviesAvaiableTableViewController: UITableViewController, LoadingProtocol 
         
         let editAction = UIAlertAction(title: "Editar Video",
                                        style: .Default) { action in
+            self.startMediaBrowserFromViewController(self, usingDelegate: self)
         }
         
         let deleteAction = UIAlertAction(title: "Deletar Video Local",
@@ -137,4 +140,30 @@ class MoviesAvaiableTableViewController: UITableViewController, LoadingProtocol 
                 print("fileURL: \(destination(NSURL(string: "")!, response!))")
         }
     }
+    
+    func startMediaBrowserFromViewController(viewController: UIViewController, usingDelegate delegate: protocol<UINavigationControllerDelegate, UIImagePickerControllerDelegate>) -> Bool {
+        // 1
+        if UIImagePickerController.isSourceTypeAvailable(.SavedPhotosAlbum) == false {
+            return false
+        }
+        
+        // 2
+        var mediaUI = UIImagePickerController()
+        mediaUI.sourceType = .SavedPhotosAlbum
+        mediaUI.mediaTypes = [kUTTypeMovie as NSString as String]
+        mediaUI.allowsEditing = true
+        mediaUI.delegate = delegate
+        
+        // 3
+        presentViewController(mediaUI, animated: true, completion: nil)
+        return true
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate
+extension MoviesAvaiableTableViewController: UIImagePickerControllerDelegate {
+}
+
+// MARK: - UINavigationControllerDelegate
+extension MoviesAvaiableTableViewController: UINavigationControllerDelegate {
 }
