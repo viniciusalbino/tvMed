@@ -63,9 +63,40 @@ class MoviesAvaiableTableViewController: UITableViewController, LoadingProtocol 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let movie = self.movies[indexPath.row]
-        self.downloadMovie(movie) { (progress, error) in
-            print(error)
+        if self.isMovietDownloaded(movie) {
+            self.showOptionsToVideo(movie)
         }
+        else {
+            self.downloadMovie(movie) { (progress, error) in
+                
+            }
+        }
+    }
+    
+    func showOptionsToVideo(movie:Movie) {
+        
+        let alert = UIAlertController(title: "Editar",
+                                      message: "Opções",
+                                      preferredStyle: .ActionSheet)
+        
+        let editAction = UIAlertAction(title: "Editar Video",
+                                       style: .Default) { action in
+        }
+        
+        let deleteAction = UIAlertAction(title: "Deletar Video Local",
+                                         style: .Default) { action in
+//            self.deleteLocalMovie(movie)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancelar",
+                                         style: .Destructive) { action in
+            alert.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+        alert.addAction(editAction)
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        self.navigationController?.presentViewController(alert, animated: true, completion: nil)
     }
     
     func isMovietDownloaded(movie: Movie) -> Bool {
@@ -74,6 +105,14 @@ class MoviesAvaiableTableViewController: UITableViewController, LoadingProtocol 
             return fileManager.fileExistsAtPath(path)
         }
         return false
+    }
+    
+    func deleteLocalMovie(movie:Movie) {
+        if let path = movie.urlInDocumentsDirectory?.path {
+            let fileManager = NSFileManager.defaultManager()
+            try! fileManager.removeItemAtURL(NSURL(string: path)!)
+            self.tableView.reloadData()
+        }
     }
     
     func downloadMovie(movie: Movie, completionHandler: (Double?, NSError?) -> Void) {
@@ -86,7 +125,6 @@ class MoviesAvaiableTableViewController: UITableViewController, LoadingProtocol 
         let destination = Alamofire.Request.suggestedDownloadDestination(directory: .DocumentDirectory, domain: .UserDomainMask)
         Alamofire.download(.GET, movie.movieURL, destination: destination)
             .progress { bytesRead, totalBytesRead, totalBytesExpectedToRead in
-//                print(totalBytesRead)
                 dispatch_async(dispatch_get_main_queue()) {
                     let progress = Double(totalBytesRead) / Double(totalBytesExpectedToRead)
                     SVProgressHUD.showProgress(Float(progress))
@@ -94,7 +132,6 @@ class MoviesAvaiableTableViewController: UITableViewController, LoadingProtocol 
                 }
             }
             .response { request, response, _, error in
-                print(response)
                 SVProgressHUD.dismiss()
                 self.tableView.reloadData()
                 print("fileURL: \(destination(NSURL(string: "")!, response!))")
