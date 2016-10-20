@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (3.5.1)
   - Crashlytics (3.8.3):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.10)
@@ -36,6 +37,7 @@ PODS:
   - SVProgressHUD (2.0.3)
 
 DEPENDENCIES:
+  - Alamofire
   - Crashlytics
   - Fabric
   - Firebase/Auth
@@ -44,6 +46,7 @@ DEPENDENCIES:
   - SVProgressHUD
 
 SPEC CHECKSUMS:
+  Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
   Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
   Fabric: c73f371ee543e3f0b80608f2674750e4910d1669
   Firebase: be473484f0d515e72ffd04acf22f981773c23e58

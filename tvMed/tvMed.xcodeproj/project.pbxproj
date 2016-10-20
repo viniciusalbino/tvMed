@@ -39,6 +39,7 @@
 		2CA0A53F1DB3D44800CE7EBB /* ThirdPartyToolsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0A53E1DB3D44800CE7EBB /* ThirdPartyToolsLoader.swift */; };
 		2CA0A5411DB3D56500CE7EBB /* FirebaseToolLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0A5401DB3D56500CE7EBB /* FirebaseToolLoader.swift */; };
 		2CA0A5451DB3D70D00CE7EBB /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0A5441DB3D70D00CE7EBB /* LoginTableViewController.swift */; };
+		2CBD74AF1DB846E900921977 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD74AE1DB846E900921977 /* MovieCell.swift */; };
 		6A39C6EE42E29793CBA46F0F /* Pods_tvMed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 290B16BA2586DFBA46279A17 /* Pods_tvMed.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +106,7 @@
 		2CA0A5401DB3D56500CE7EBB /* FirebaseToolLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseToolLoader.swift; sourceTree = "<group>"; };
 		2CA0A5421DB3D65000CE7EBB /* tvMed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tvMed.entitlements; sourceTree = "<group>"; };
 		2CA0A5441DB3D70D00CE7EBB /* LoginTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
+		2CBD74AE1DB846E900921977 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		5A424E0C830D9C1CB52E8AA3 /* Pods-tvMed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvMed.release.xcconfig"; path = "Pods/Target Support Files/Pods-tvMed/Pods-tvMed.release.xcconfig"; sourceTree = "<group>"; };
 		C289A243FB23AC21772BCEC6 /* Pods-tvMed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvMed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tvMed/Pods-tvMed.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -308,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				2C6EE1D31DB5B734005CC7A4 /* MoviesAvaiableTableViewController.swift */,
+				2CBD74AE1DB846E900921977 /* MovieCell.swift */,
 			);
 			name = MoviesToEdit;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 			files = (
 				2C675F761DB3EC9D001FCF69 /* LoadingProtocol.swift in Sources */,
 				2C18DE8B1DB3323000797EDE /* SecondViewController.swift in Sources */,
+				2CBD74AF1DB846E900921977 /* MovieCell.swift in Sources */,
 				2C675F821DB3F2B3001FCF69 /* UIAlertView+Helper.m in Sources */,
 				2C675F5C1DB3D9C2001FCF69 /* AnnotatedTextField.swift in Sources */,
 				2CA0A53F1DB3D44800CE7EBB /* ThirdPartyToolsLoader.swift in Sources */,

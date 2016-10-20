@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-tvMed.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>05DBFE8A2B0BF2A3F9EC998A904F54A6</key>
+		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AA438DA89AE5D699C801919F43CB9F39</key>
+		<key>80F2CC726A59786561411B31765E2DEE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C1497C70C9F5689889CF18A3D17704B3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
