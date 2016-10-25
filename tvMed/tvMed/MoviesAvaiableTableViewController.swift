@@ -10,20 +10,36 @@ import Foundation
 import Alamofire
 import MediaPlayer
 import MobileCoreServices
+import Photos
 
-class MoviesAvaiableTableViewController: UITableViewController, LoadingProtocol {
+class MoviesAvaiableTableViewController: UITableViewController, LoadingProtocol, AVAudioRecorderDelegate {
     
     var movies = [Movie]()
+    var audioRec: AVAudioRecorder?
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.startLoading()
         self.getVideos()
+        self.startRecordingWithMicrophone()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Vídeos"
+    }
+    
+    func startRecordingWithMicrophone() {
+        AVAudioSession.sharedInstance().requestRecordPermission () {
+            [unowned self] allowed in
+            if allowed {
+                // Microphone allowed, do what you like!
+//                self.startRecording()
+            } else {
+                // User denied microphone. Tell them off!
+                
+            }
+        }
     }
     
     func getVideos() {
@@ -83,7 +99,8 @@ class MoviesAvaiableTableViewController: UITableViewController, LoadingProtocol 
         
         let editAction = UIAlertAction(title: "Editar Video",
                                        style: .Default) { action in
-            self.startMediaBrowserFromViewController(self, usingDelegate: self)
+        let moviePlayer = MPMoviePlayerViewController(contentURL: movie.movieURL)
+        self.presentMoviePlayerViewControllerAnimated(moviePlayer)
         }
         
         let deleteAction = UIAlertAction(title: "Deletar Video Local",
@@ -137,26 +154,47 @@ class MoviesAvaiableTableViewController: UITableViewController, LoadingProtocol 
             .response { request, response, _, error in
                 SVProgressHUD.dismiss()
                 self.tableView.reloadData()
-                print("fileURL: \(destination(NSURL(string: "")!, response!))")
+//                print("fileURL: \(destination(NSURL(string: "")!, response!))")
         }
     }
     
-    func startMediaBrowserFromViewController(viewController: UIViewController, usingDelegate delegate: protocol<UINavigationControllerDelegate, UIImagePickerControllerDelegate>) -> Bool {
-        // 1
-        if UIImagePickerController.isSourceTypeAvailable(.SavedPhotosAlbum) == false {
-            return false
+    func startRecording() {
+        let paths = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        let docsDirect = paths[0]
+        
+        let audioUrl = try docsDirect.URLByAppendingPathComponent("audioFileName.m4a")
+        
+        //1. create the session
+        let session = AVAudioSession.sharedInstance()
+        
+        do {
+            // 2. configure the session for recording and playback
+            try session.setCategory(AVAudioSessionCategoryPlayAndRecord, withOptions: .DefaultToSpeaker)
+            try session.setActive(true)
+            // 3. set up a high-quality recording session
+            let settings = [
+                AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+                AVSampleRateKey: 44100,
+                AVNumberOfChannelsKey: 2,
+                AVEncoderAudioQualityKey: AVAudioQuality.High.rawValue
+            ]
+            // 4. create the audio recording, and assign ourselves as the delegate
+            audioRec = try AVAudioRecorder(URL: audioUrl!, settings: settings)
+            audioRec?.delegate = self
+            audioRec?.record()
         }
-        
-        // 2
-        var mediaUI = UIImagePickerController()
-        mediaUI.sourceType = .SavedPhotosAlbum
-        mediaUI.mediaTypes = [kUTTypeMovie as NSString as String]
-        mediaUI.allowsEditing = true
-        mediaUI.delegate = delegate
-        
-        // 3
-        presentViewController(mediaUI, animated: true, completion: nil)
-        return true
+        catch let error {
+            // failed to record!
+            print(error)
+        }
+    }
+    
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if !flag {
+//            recordingEnded(success: false)
+        } else {
+//            recordingEnded(success: true)
+        }
     }
 }
 

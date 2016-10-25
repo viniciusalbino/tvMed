@@ -72,5 +72,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Libere acesso a midia por favor</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Libere acesso a midia por favor</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Libere o microfone por favor</string>
 </dict>
 </plist>
