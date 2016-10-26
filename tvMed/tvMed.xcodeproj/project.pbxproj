@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2C0277D21DB6FBF90069715F /* FabricTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0277D11DB6FBF90069715F /* FabricTool.swift */; };
 		2C02A1511DB5AC3500EF6CB6 /* KeychainWrapperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C02A1501DB5AC3500EF6CB6 /* KeychainWrapperManager.swift */; };
+		2C0C57611DC03EAA00636873 /* PlayerPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0C57601DC03EAA00636873 /* PlayerPreviewView.swift */; };
 		2C10546B1DB6F37300BFAF54 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C10546A1DB6F37300BFAF54 /* Movie.swift */; };
 		2C18DE871DB3323000797EDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C18DE861DB3323000797EDE /* AppDelegate.swift */; };
 		2C18DE8B1DB3323000797EDE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C18DE8A1DB3323000797EDE /* SecondViewController.swift */; };
@@ -39,6 +40,7 @@
 		2CA0A53F1DB3D44800CE7EBB /* ThirdPartyToolsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0A53E1DB3D44800CE7EBB /* ThirdPartyToolsLoader.swift */; };
 		2CA0A5411DB3D56500CE7EBB /* FirebaseToolLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0A5401DB3D56500CE7EBB /* FirebaseToolLoader.swift */; };
 		2CA0A5451DB3D70D00CE7EBB /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0A5441DB3D70D00CE7EBB /* LoginTableViewController.swift */; };
+		2CA9FD951DC02AE200A8A97D /* MoviePlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA9FD941DC02AE200A8A97D /* MoviePlayerController.swift */; };
 		2CBD74AF1DB846E900921977 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD74AE1DB846E900921977 /* MovieCell.swift */; };
 		6A39C6EE42E29793CBA46F0F /* Pods_tvMed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 290B16BA2586DFBA46279A17 /* Pods_tvMed.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +66,7 @@
 		290B16BA2586DFBA46279A17 /* Pods_tvMed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvMed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C0277D11DB6FBF90069715F /* FabricTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FabricTool.swift; sourceTree = "<group>"; };
 		2C02A1501DB5AC3500EF6CB6 /* KeychainWrapperManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapperManager.swift; sourceTree = "<group>"; };
+		2C0C57601DC03EAA00636873 /* PlayerPreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPreviewView.swift; sourceTree = "<group>"; };
 		2C10546A1DB6F37300BFAF54 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		2C18DE831DB3323000797EDE /* tvMed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tvMed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C18DE861DB3323000797EDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +109,7 @@
 		2CA0A5401DB3D56500CE7EBB /* FirebaseToolLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseToolLoader.swift; sourceTree = "<group>"; };
 		2CA0A5421DB3D65000CE7EBB /* tvMed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = tvMed.entitlements; sourceTree = "<group>"; };
 		2CA0A5441DB3D70D00CE7EBB /* LoginTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
+		2CA9FD941DC02AE200A8A97D /* MoviePlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePlayerController.swift; sourceTree = "<group>"; };
 		2CBD74AE1DB846E900921977 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		5A424E0C830D9C1CB52E8AA3 /* Pods-tvMed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvMed.release.xcconfig"; path = "Pods/Target Support Files/Pods-tvMed/Pods-tvMed.release.xcconfig"; sourceTree = "<group>"; };
 		C289A243FB23AC21772BCEC6 /* Pods-tvMed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tvMed.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tvMed/Pods-tvMed.debug.xcconfig"; sourceTree = "<group>"; };
@@ -318,6 +322,7 @@
 		2CA0A53B1DB3D1B300CE7EBB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2CA9FD931DC02AC900A8A97D /* MoviePlayerController */,
 				2C6EE1D21DB5B719005CC7A4 /* MoviesToEdit */,
 				2CA0A53C1DB3D1BD00CE7EBB /* Login */,
 			);
@@ -348,6 +353,15 @@
 				2C18DE8C1DB3323000797EDE /* Main.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		2CA9FD931DC02AC900A8A97D /* MoviePlayerController */ = {
+			isa = PBXGroup;
+			children = (
+				2CA9FD941DC02AE200A8A97D /* MoviePlayerController.swift */,
+				2C0C57601DC03EAA00636873 /* PlayerPreviewView.swift */,
+			);
+			name = MoviePlayerController;
 			sourceTree = "<group>";
 		};
 		68851B6ECF005DBD029258F0 /* Frameworks */ = {
@@ -592,12 +606,14 @@
 				2C675F6D1DB3EB0D001FCF69 /* UIView+Ext.swift in Sources */,
 				2C675F751DB3EC9D001FCF69 /* BaseControllerProtocol.swift in Sources */,
 				2C0277D21DB6FBF90069715F /* FabricTool.swift in Sources */,
+				2C0C57611DC03EAA00636873 /* PlayerPreviewView.swift in Sources */,
 				2C675F851DB3F2F8001FCF69 /* NSString+Utils.m in Sources */,
 				2C6EE1D41DB5B734005CC7A4 /* MoviesAvaiableTableViewController.swift in Sources */,
 				2C675F891DB3F4FA001FCF69 /* FirebaseConnection.swift in Sources */,
 				2C675F781DB3ED0E001FCF69 /* ValidatesPassword.swift in Sources */,
 				2C675F6B1DB3EACC001FCF69 /* ZBarButtonItem.swift in Sources */,
 				2CA0A5451DB3D70D00CE7EBB /* LoginTableViewController.swift in Sources */,
+				2CA9FD951DC02AE200A8A97D /* MoviePlayerController.swift in Sources */,
 				2C675F811DB3F2B3001FCF69 /* UIAlertView+Block.m in Sources */,
 				2C02A1511DB5AC3500EF6CB6 /* KeychainWrapperManager.swift in Sources */,
 				2C675F7A1DB3ED4D001FCF69 /* String+Conversion.swift in Sources */,

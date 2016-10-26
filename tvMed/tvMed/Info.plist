@@ -43,6 +43,12 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Libere acesso a midia por favor</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Libere o microfone por favor</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Libere acesso a midia por favor</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -64,6 +70,8 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -72,11 +80,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Libere acesso a midia por favor</string>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>Libere acesso a midia por favor</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Libere o microfone por favor</string>
 </dict>
 </plist>

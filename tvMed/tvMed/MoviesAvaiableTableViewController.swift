@@ -99,13 +99,14 @@ class MoviesAvaiableTableViewController: UITableViewController, LoadingProtocol,
         
         let editAction = UIAlertAction(title: "Editar Video",
                                        style: .Default) { action in
-        let moviePlayer = MPMoviePlayerViewController(contentURL: movie.movieURL)
-        self.presentMoviePlayerViewControllerAnimated(moviePlayer)
+//        let moviePlayer = MPMoviePlayerViewController(contentURL: movie.movieURL)
+//        self.presentMoviePlayerViewControllerAnimated(moviePlayer)
+                                        self.performSegueWithIdentifier("showMovieSegue", sender: movie)
         }
         
         let deleteAction = UIAlertAction(title: "Deletar Video Local",
                                          style: .Default) { action in
-//            self.deleteLocalMovie(movie)
+            self.deleteLocalMovie(movie)
         }
         
         let cancelAction = UIAlertAction(title: "Cancelar",
@@ -130,8 +131,12 @@ class MoviesAvaiableTableViewController: UITableViewController, LoadingProtocol,
     func deleteLocalMovie(movie:Movie) {
         if let path = movie.urlInDocumentsDirectory?.path {
             let fileManager = NSFileManager.defaultManager()
-            try! fileManager.removeItemAtURL(NSURL(string: path)!)
-            self.tableView.reloadData()
+            do {
+                try fileManager.removeItemAtURL(NSURL(string: path)!)
+                self.tableView.reloadData()
+            }catch let error{
+                print(error)
+            }
         }
     }
     
@@ -194,6 +199,15 @@ class MoviesAvaiableTableViewController: UITableViewController, LoadingProtocol,
 //            recordingEnded(success: false)
         } else {
 //            recordingEnded(success: true)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard segue.identifier != nil else {
+            return
+        }
+        if segue.identifier == "showMovieSegue", let movieViewController = segue.destinationViewController as? MoviePlayerController {
+            movieViewController.video = sender as? Movie
         }
     }
 }

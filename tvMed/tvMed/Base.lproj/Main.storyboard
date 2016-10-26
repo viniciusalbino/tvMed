@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="apP-mQ-dp8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="apP-mQ-dp8">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -252,10 +252,58 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="KFY-3S-5o7"/>
+                    <connections>
+                        <segue destination="mo7-v0-xGj" kind="show" identifier="showMovieSegue" id="8un-xP-wpM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vtk-jb-3MG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1609" y="-45"/>
+            <point key="canvasLocation" x="1519" y="-143"/>
+        </scene>
+        <!--Movie Player Controller-->
+        <scene sceneID="Q3e-Vo-T6M">
+            <objects>
+                <viewController id="mo7-v0-xGj" customClass="MoviePlayerController" customModule="tvMed" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8GS-vR-H5C"/>
+                        <viewControllerLayoutGuide type="bottom" id="hG8-Q0-gAQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jrk-uL-fex">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Mi-I0-fBG">
+                                <connections>
+                                    <segue destination="4Dt-Js-0Pd" kind="embed" identifier="moviePlayerController" id="vaQ-d6-5ir"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZrY-r6-rOU">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="J5M-pi-6hW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hG8-Q0-gAQ" firstAttribute="top" secondItem="ZrY-r6-rOU" secondAttribute="bottom" id="OEZ-MK-SFE"/>
+                            <constraint firstItem="2Mi-I0-fBG" firstAttribute="leading" secondItem="jrk-uL-fex" secondAttribute="leading" id="Pzv-gm-tsh"/>
+                            <constraint firstAttribute="trailing" secondItem="ZrY-r6-rOU" secondAttribute="trailing" id="Rhg-fs-xdz"/>
+                            <constraint firstAttribute="trailing" secondItem="2Mi-I0-fBG" secondAttribute="trailing" id="qa6-HL-qs6"/>
+                            <constraint firstItem="2Mi-I0-fBG" firstAttribute="top" secondItem="8GS-vR-H5C" secondAttribute="bottom" id="qu4-V2-0hu"/>
+                            <constraint firstItem="ZrY-r6-rOU" firstAttribute="leading" secondItem="jrk-uL-fex" secondAttribute="leading" id="quT-EV-hMz"/>
+                            <constraint firstItem="ZrY-r6-rOU" firstAttribute="top" secondItem="2Mi-I0-fBG" secondAttribute="bottom" id="tdz-zM-ikN"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="container" destination="2Mi-I0-fBG" id="FcW-qu-rTS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FVr-d2-Gwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3175.1999999999998" y="-460.11994002998506"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f4y-Jr-kPg">
@@ -273,6 +321,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TwS-bj-hN1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="854" y="-73"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="f7g-cC-DUf">
+            <objects>
+                <viewController id="4Dt-Js-0Pd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fc4-Fs-WYC"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tj4-eh-ESs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yMY-BF-tCy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SY3-di-cJZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2418" y="167"/>
         </scene>
     </scenes>
     <resources>
