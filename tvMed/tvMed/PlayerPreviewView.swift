@@ -33,12 +33,12 @@ class PlayerPreviewView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        playerLayer.videoGravity = AVLayerVideoGravityResize
+        playerLayer.videoGravity = AVLayerVideoGravityResizeAspect
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        playerLayer.videoGravity = AVLayerVideoGravityResize
+        playerLayer.videoGravity = AVLayerVideoGravityResizeAspect
     }
     
 }
