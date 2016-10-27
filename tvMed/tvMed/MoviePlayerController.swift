@@ -41,7 +41,8 @@ class MoviePlayerController: UIViewController {
     
     @IBOutlet weak var recordButton:UIButton!
     @IBOutlet weak var statusLabel:UILabel!
-    
+    @IBOutlet weak var totalTimeLabel:UILabel!
+    @IBOutlet weak var currentTimeLabel:UILabel!
     @IBOutlet weak var container:UIView!
     var video:Movie?
     var containedViewController:UIViewController?
@@ -58,13 +59,19 @@ class MoviePlayerController: UIViewController {
     }
     
     @IBAction func recordButtonPressed() {
+        guard let videoPlayer = self.player else {
+            return
+        }
         switch self.currentStatus {
         case .Idle:
             self.currentStatus = .Recording
+            videoPlayer.play()
         case .Recording:
             self.currentStatus = .Paused
+            videoPlayer.pause()
         default:
             self.currentStatus = .Recording
+            videoPlayer.play()
         }
         
         self.recordButton.setImage(self.currentStatus.image, forState: .Normal)
@@ -77,15 +84,24 @@ class MoviePlayerController: UIViewController {
         }
         
         self.player = AVPlayer(URL: currentMovie.movieURL)
-        
+        self.player?.addPeriodicTimeObserverForInterval(CMTimeMake(1, 1), queue: nil, usingBlock: { time in
+            let currentPlayerItem = self.player!.currentItem
+            let duration = currentPlayerItem?.asset.duration
+            let currentTime = self.player?.currentTime()
+            
+            let durationInSeconds = NSTimeInterval(Float(CMTimeGetSeconds(duration!)))
+            let currentTimeInSeconds = NSTimeInterval(Float(CMTimeGetSeconds(currentTime!)))
+            
+            self.currentTimeLabel.text = "Tempo \(currentTimeInSeconds.hourMinuteSecondString)"
+            self.totalTimeLabel.text = "Total \(durationInSeconds.hourMinuteSecondString)"
+        })
         let playerPreviewView = PlayerPreviewView(frame: CGRectZero)
         viewController.view.addSubview(playerPreviewView)
         playerPreviewView.player = self.player
-        
+        self.player?.muted = true
         playerPreviewView.translatesAutoresizingMaskIntoConstraints = false
         viewController.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-0-[subview]-0-|", options: .DirectionLeadingToTrailing, metrics: nil, views: ["subview": playerPreviewView]))
         viewController.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-0-[subview]-0-|", options: .DirectionLeadingToTrailing, metrics: nil, views: ["subview": playerPreviewView]))
-        self.player!.play()
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

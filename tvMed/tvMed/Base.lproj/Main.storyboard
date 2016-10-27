@@ -297,12 +297,26 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8c-gf-b6d">
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02P-tq-Y3h">
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="02P-tq-Y3h" firstAttribute="top" secondItem="ZrY-r6-rOU" secondAttribute="top" constant="5" id="3eS-80-m7j"/>
                                     <constraint firstItem="Zj0-E1-jDa" firstAttribute="centerY" secondItem="ZrY-r6-rOU" secondAttribute="centerY" id="B0X-uo-Gt6"/>
-                                    <constraint firstAttribute="height" constant="50" id="J5M-pi-6hW"/>
+                                    <constraint firstAttribute="trailing" secondItem="02P-tq-Y3h" secondAttribute="trailing" constant="15" id="DRI-6H-lKC"/>
+                                    <constraint firstAttribute="height" constant="70" id="J5M-pi-6hW"/>
+                                    <constraint firstItem="K8c-gf-b6d" firstAttribute="top" secondItem="ZrY-r6-rOU" secondAttribute="top" constant="5" id="Ug7-5h-Gof"/>
                                     <constraint firstItem="oTn-JX-oju" firstAttribute="centerY" secondItem="ZrY-r6-rOU" secondAttribute="centerY" id="YHw-VN-tzQ"/>
+                                    <constraint firstItem="K8c-gf-b6d" firstAttribute="leading" secondItem="ZrY-r6-rOU" secondAttribute="leading" constant="15" id="cC8-PV-71X"/>
                                     <constraint firstItem="oTn-JX-oju" firstAttribute="centerX" secondItem="ZrY-r6-rOU" secondAttribute="centerX" id="fFB-2z-Rxn"/>
                                     <constraint firstAttribute="trailing" secondItem="Zj0-E1-jDa" secondAttribute="trailing" constant="15" id="mIg-fC-AAe"/>
                                     <constraint firstItem="Zj0-E1-jDa" firstAttribute="leading" secondItem="oTn-JX-oju" secondAttribute="trailing" constant="10" id="rqq-ut-txJ"/>
@@ -324,8 +338,10 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="container" destination="2Mi-I0-fBG" id="FcW-qu-rTS"/>
+                        <outlet property="currentTimeLabel" destination="K8c-gf-b6d" id="aaR-tw-clk"/>
                         <outlet property="recordButton" destination="oTn-JX-oju" id="uE6-zq-gbl"/>
                         <outlet property="statusLabel" destination="Zj0-E1-jDa" id="mzE-s4-wkE"/>
+                        <outlet property="totalTimeLabel" destination="02P-tq-Y3h" id="2Jc-EY-hNe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FVr-d2-Gwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -358,7 +374,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Tj4-eh-ESs"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yMY-BF-tCy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="484"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
