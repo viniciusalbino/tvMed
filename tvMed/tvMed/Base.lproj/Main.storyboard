@@ -307,6 +307,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mkc-3n-MzO">
+                                        <state key="normal" title="Finalizar Gravação"/>
+                                        <connections>
+                                            <action selector="stopRecording" destination="mo7-v0-xGj" eventType="touchUpInside" id="hpt-y2-xyY"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -318,7 +324,9 @@
                                     <constraint firstItem="oTn-JX-oju" firstAttribute="centerY" secondItem="ZrY-r6-rOU" secondAttribute="centerY" id="YHw-VN-tzQ"/>
                                     <constraint firstItem="K8c-gf-b6d" firstAttribute="leading" secondItem="ZrY-r6-rOU" secondAttribute="leading" constant="15" id="cC8-PV-71X"/>
                                     <constraint firstItem="oTn-JX-oju" firstAttribute="centerX" secondItem="ZrY-r6-rOU" secondAttribute="centerX" id="fFB-2z-Rxn"/>
+                                    <constraint firstItem="Mkc-3n-MzO" firstAttribute="top" secondItem="K8c-gf-b6d" secondAttribute="bottom" constant="5" id="gDJ-ZD-17A"/>
                                     <constraint firstAttribute="trailing" secondItem="Zj0-E1-jDa" secondAttribute="trailing" constant="15" id="mIg-fC-AAe"/>
+                                    <constraint firstItem="Mkc-3n-MzO" firstAttribute="leading" secondItem="ZrY-r6-rOU" secondAttribute="leading" constant="15" id="o5Y-XY-EYn"/>
                                     <constraint firstItem="Zj0-E1-jDa" firstAttribute="leading" secondItem="oTn-JX-oju" secondAttribute="trailing" constant="10" id="rqq-ut-txJ"/>
                                 </constraints>
                             </view>

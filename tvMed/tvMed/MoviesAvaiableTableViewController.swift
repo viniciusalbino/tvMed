@@ -99,8 +99,6 @@ class MoviesAvaiableTableViewController: UITableViewController, LoadingProtocol,
         
         let editAction = UIAlertAction(title: "Editar Video",
                                        style: .Default) { action in
-//        let moviePlayer = MPMoviePlayerViewController(contentURL: movie.movieURL)
-//        self.presentMoviePlayerViewControllerAnimated(moviePlayer)
                                         self.performSegueWithIdentifier("showMovieSegue", sender: movie)
         }
         

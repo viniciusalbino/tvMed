@@ -37,7 +37,7 @@ enum status: String {
     }
 }
 
-class MoviePlayerController: UIViewController {
+class MoviePlayerController: UIViewController, AVAudioRecorderDelegate {
     
     @IBOutlet weak var recordButton:UIButton!
     @IBOutlet weak var statusLabel:UILabel!
@@ -48,6 +48,7 @@ class MoviePlayerController: UIViewController {
     var containedViewController:UIViewController?
     var player:AVPlayer?
     var currentStatus = status.Idle
+    var audioRec: AVAudioRecorder?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,12 +67,15 @@ class MoviePlayerController: UIViewController {
         case .Idle:
             self.currentStatus = .Recording
             videoPlayer.play()
+            self.startRecording()
         case .Recording:
             self.currentStatus = .Paused
             videoPlayer.pause()
+            self.pauseRecording()
         default:
             self.currentStatus = .Recording
             videoPlayer.play()
+            self.startRecording()
         }
         
         self.recordButton.setImage(self.currentStatus.image, forState: .Normal)
@@ -110,6 +114,55 @@ class MoviePlayerController: UIViewController {
         }
         if segue.identifier == "moviePlayerController" {
             self.containedViewController = segue.destinationViewController as UIViewController
+        }
+    }
+    
+    func startRecording() {
+        let paths = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        let docsDirect = paths[0]
+        
+        let audioUrl = try docsDirect.URLByAppendingPathComponent("audioFileName.m4a")
+        
+        //1. create the session
+        let session = AVAudioSession.sharedInstance()
+        
+        do {
+            // 2. configure the session for recording and playback
+            try session.setCategory(AVAudioSessionCategoryPlayAndRecord, withOptions: .DefaultToSpeaker)
+            try session.setActive(true)
+            // 3. set up a high-quality recording session
+            let settings = [
+                AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+                AVSampleRateKey: 44100,
+                AVNumberOfChannelsKey: 2,
+                AVEncoderAudioQualityKey: AVAudioQuality.High.rawValue
+            ]
+            // 4. create the audio recording, and assign ourselves as the delegate
+            audioRec = try AVAudioRecorder(URL: audioUrl!, settings: settings)
+            audioRec?.delegate = self
+            audioRec?.record()
+        }
+        catch let error {
+            // failed to record!
+            print(error)
+        }
+    }
+    
+    func pauseRecording() {
+        audioRec?.pause()
+    }
+    
+    @IBAction func stopRecording() {
+        audioRec?.stop()
+    }
+    
+    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
+        if !flag {
+            print("erro")
+            //            recordingEnded(success: false)
+        } else {
+            print("sucesso")
+            //            recordingEnded(success: true)
         }
     }
 }
