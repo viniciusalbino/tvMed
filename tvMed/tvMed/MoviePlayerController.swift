@@ -53,6 +53,7 @@ class MoviePlayerController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Encerrar", style: .Plain, target: self, action:Selector(self.mixAudioAndVideo()))
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -202,7 +203,40 @@ class MoviePlayerController: UIViewController, AVAudioRecorderDelegate {
         } catch let error as NSError {
             print(error)
         }
+    }
+    
+    func mixAudioAndVideo() {
+        SVProgressHUD.showInfoWithStatus("Exportando video...")
+        let mixComposition = AVMutableComposition()
+        let paths = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        let docsDirect = paths[0]
+        
+        for audioTrack in self.audioTracks {
+            let musicFile = docsDirect.URLByAppendingPathComponent(audioTrack.audioName)
+            let audioAsset = AVURLAsset(URL: musicFile!, options: nil)
+            let audioTimeRange = CMTimeRangeMake(audioTrack.audioTime!, audioAsset.duration)
+            let compositionAudioTrack:AVMutableCompositionTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio, preferredTrackID: kCMPersistentTrackID_Invalid)
+            try! compositionAudioTrack.insertTimeRange(audioTimeRange, ofTrack: audioAsset.tracksWithMediaType(AVMediaTypeAudio).first!, atTime: audioTrack.audioTime!)
+        }
+        
+        let videoAsset = AVURLAsset(URL: video!.movieURL, options: nil)
+        let videoTimeRange = CMTimeRangeMake(kCMTimeZero, videoAsset.duration)
+        let compositionVideoTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeVideo, preferredTrackID: kCMPersistentTrackID_Invalid)
+        try! compositionVideoTrack.insertTimeRange(videoTimeRange, ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo).first!, atTime: kCMTimeZero)
         
         
+        let videoName = "\(KeychainWrapperManager.getUser()!.uid)-video\(self.audioTracks.count).mov"
+        let outputFilePath = docsDirect.URLByAppendingPathComponent(videoName)
+        
+        let assetExport = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality)
+        assetExport!.outputFileType = "com.apple.quicktime-movie"
+        assetExport!.outputURL = outputFilePath!
+        
+        assetExport?.exportAsynchronouslyWithCompletionHandler({ 
+            dispatch_async(dispatch_get_main_queue()){
+                print("finished exporting")
+                SVProgressHUD.dismiss()
+            }
+        })
     }
 }
