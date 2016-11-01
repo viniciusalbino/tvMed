@@ -49,6 +49,7 @@ class MoviePlayerController: UIViewController, AVAudioRecorderDelegate {
     var player:AVPlayer?
     var currentStatus = status.Idle
     var audioRec: AVAudioRecorder?
+    var audioTracks = [AudioTrack]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,6 +81,13 @@ class MoviePlayerController: UIViewController, AVAudioRecorderDelegate {
         
         self.recordButton.setImage(self.currentStatus.image, forState: .Normal)
         self.statusLabel.text = self.currentStatus.statusLabel
+    }
+    
+    func getVideoCurrentCTime() -> CMTime {
+        guard let currentTime = self.player?.currentTime() else {
+            return CMTime.init()
+        }
+        return currentTime
     }
     
     func loadVideo() {
@@ -121,7 +129,15 @@ class MoviePlayerController: UIViewController, AVAudioRecorderDelegate {
         let paths = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         let docsDirect = paths[0]
         
-        let audioUrl = try docsDirect.URLByAppendingPathComponent("audioFileName.m4a")
+        let audioTrack = AudioTrack()
+        let audioName = "audio\(self.audioTracks.count).m4a"
+        audioTrack.audioURL = docsDirect.URLByAppendingPathComponent(audioName)!
+        audioTrack.audioTime = self.getVideoCurrentCTime()
+        audioTrack.audioName = audioName
+        
+        self.audioTracks.append(audioTrack)
+        
+        let audioUrl = try audioTrack.audioURL
         
         //1. create the session
         let session = AVAudioSession.sharedInstance()
@@ -135,10 +151,9 @@ class MoviePlayerController: UIViewController, AVAudioRecorderDelegate {
                 AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
                 AVSampleRateKey: 44100,
                 AVNumberOfChannelsKey: 2,
-                AVEncoderAudioQualityKey: AVAudioQuality.High.rawValue
-            ]
+                AVEncoderAudioQualityKey: AVAudioQuality.High.rawValue]
             // 4. create the audio recording, and assign ourselves as the delegate
-            audioRec = try AVAudioRecorder(URL: audioUrl!, settings: settings)
+            audioRec = try AVAudioRecorder(URL: audioUrl, settings: settings)
             audioRec?.delegate = self
             audioRec?.record()
         }
@@ -159,10 +174,35 @@ class MoviePlayerController: UIViewController, AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         if !flag {
             print("erro")
+            
             //            recordingEnded(success: false)
         } else {
             print("sucesso")
+            self.playMusic()
             //            recordingEnded(success: true)
         }
+    }
+    
+    func playMusic() {
+        let audioTrack = self.audioTracks.first
+        
+        let paths = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        let docsDirect = paths[0]
+        
+        let musicFile = docsDirect.URLByAppendingPathComponent(audioTrack!.audioName)
+        print(musicFile)
+        
+        try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+        try! AVAudioSession.sharedInstance().setActive(true)
+        
+        do {
+            let audioPlayer = try! AVAudioPlayer(contentsOfURL: musicFile!)
+            audioPlayer.volume = 1.0
+            audioPlayer.play()
+        } catch let error as NSError {
+            print(error)
+        }
+        
+        
     }
 }
