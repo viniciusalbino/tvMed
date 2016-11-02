@@ -235,19 +235,23 @@ class MoviePlayerController: UIViewController, AVAudioRecorderDelegate {
         let videoAsset = AVURLAsset(URL: video!.movieURL, options: nil)
         let videoTimeRange = CMTimeRangeMake(kCMTimeZero, videoAsset.duration)
         let compositionVideoTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeVideo, preferredTrackID: kCMPersistentTrackID_Invalid)
-        try! compositionVideoTrack.insertTimeRange(videoTimeRange, ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo).first!, atTime: kCMTimeZero)
         
+        do {
+            try compositionVideoTrack.insertTimeRange(videoTimeRange, ofTrack: videoAsset.tracksWithMediaType(AVMediaTypeVideo).first!, atTime: kCMTimeZero)
+        } catch let error {
+            print(error)
+        }
         
-        let videoName = "\(KeychainWrapperManager.getUser()!.uid)-video\(self.audioTracks.count).mov"
+        let videoName = "\(KeychainWrapperManager.getUser()!.uid)-video\(self.audioTracks.count).mp4"
         let outputFilePath = docsDirect.URLByAppendingPathComponent(videoName)
         
         let assetExport = AVAssetExportSession(asset: mixComposition, presetName: AVAssetExportPresetHighestQuality)
-        assetExport!.outputFileType = "com.apple.quicktime-movie"
+        assetExport!.outputFileType = AVFileTypeMPEG4
         assetExport!.outputURL = outputFilePath!
         
         assetExport?.exportAsynchronouslyWithCompletionHandler({ 
             dispatch_async(dispatch_get_main_queue()){
-                print("finished exporting")
+                print("finished exporting \(outputFilePath)")
                 SVProgressHUD.dismiss()
             }
         })
