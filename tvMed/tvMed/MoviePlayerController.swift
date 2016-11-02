@@ -53,7 +53,7 @@ class MoviePlayerController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Encerrar", style: .Plain, target: self, action:Selector(self.mixAudioAndVideo()))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Encerrar", style: .Plain, target: self, action:#selector(MoviePlayerController.mixAudioAndVideo))
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -131,7 +131,7 @@ class MoviePlayerController: UIViewController, AVAudioRecorderDelegate {
         let docsDirect = paths[0]
         
         let audioTrack = AudioTrack()
-        let audioName = "audio\(self.audioTracks.count).m4a"
+        let audioName = "audio\(self.audioTracks.count).caf"
         audioTrack.audioURL = docsDirect.URLByAppendingPathComponent(audioName)!
         audioTrack.audioTime = self.getVideoCurrentCTime()
         audioTrack.audioName = audioName
@@ -143,44 +143,53 @@ class MoviePlayerController: UIViewController, AVAudioRecorderDelegate {
         //1. create the session
         let session = AVAudioSession.sharedInstance()
         
-        do {
-            // 2. configure the session for recording and playback
-            try session.setCategory(AVAudioSessionCategoryPlayAndRecord, withOptions: .DefaultToSpeaker)
-            try session.setActive(true)
-            // 3. set up a high-quality recording session
-            let settings = [
-                AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
-                AVSampleRateKey: 44100,
-                AVNumberOfChannelsKey: 2,
-                AVEncoderAudioQualityKey: AVAudioQuality.High.rawValue]
-            // 4. create the audio recording, and assign ourselves as the delegate
-            audioRec = try AVAudioRecorder(URL: audioUrl, settings: settings)
-            audioRec?.delegate = self
-            audioRec?.record()
-        }
-        catch let error {
-            // failed to record!
-            print(error)
+        if (session.respondsToSelector(#selector(AVAudioSession.requestRecordPermission(_:)))) {
+            AVAudioSession.sharedInstance().requestRecordPermission({(granted: Bool)-> Void in
+                if granted {
+                    do {
+                        // 2. configure the session for recording and playback
+                        try session.setCategory(AVAudioSessionCategoryPlayAndRecord, withOptions: .DefaultToSpeaker)
+                        try session.setActive(true)
+                        // 3. set up a high-quality recording session
+                        //create AnyObject of settings
+                        let settings: [String : AnyObject] = [
+                            AVFormatIDKey: Int(kAudioFormatAppleLossless),
+                            AVEncoderAudioQualityKey : AVAudioQuality.Max.rawValue,
+                            AVEncoderBitRateKey : 320000,
+                            AVNumberOfChannelsKey: 2,
+                            AVSampleRateKey : 44100.0
+                        ]
+                        // 4. create the audio recording, and assign ourselves as the delegate
+                        self.audioRec = try AVAudioRecorder(URL: audioUrl, settings: settings)
+                        self.audioRec?.delegate = self
+                        self.audioRec?.record()
+                    }
+                    catch let error {
+                        // failed to record!
+                        print(error)
+                    }
+                }
+                else {
+                    print("not granted")
+                }
+            })
         }
     }
     
     func pauseRecording() {
-        audioRec?.pause()
+        self.audioRec?.pause()
     }
     
     @IBAction func stopRecording() {
-        audioRec?.stop()
+        self.audioRec?.stop()
     }
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         if !flag {
             print("erro")
-            
-            //            recordingEnded(success: false)
         } else {
             print("sucesso")
             self.playMusic()
-            //            recordingEnded(success: true)
         }
     }
     
@@ -197,10 +206,10 @@ class MoviePlayerController: UIViewController, AVAudioRecorderDelegate {
         try! AVAudioSession.sharedInstance().setActive(true)
         
         do {
-            let audioPlayer = try! AVAudioPlayer(contentsOfURL: musicFile!)
+            let audioPlayer = try AVAudioPlayer(contentsOfURL: musicFile!)
             audioPlayer.volume = 1.0
             audioPlayer.play()
-        } catch let error as NSError {
+        } catch let error {
             print(error)
         }
     }
@@ -216,7 +225,11 @@ class MoviePlayerController: UIViewController, AVAudioRecorderDelegate {
             let audioAsset = AVURLAsset(URL: musicFile!, options: nil)
             let audioTimeRange = CMTimeRangeMake(audioTrack.audioTime!, audioAsset.duration)
             let compositionAudioTrack:AVMutableCompositionTrack = mixComposition.addMutableTrackWithMediaType(AVMediaTypeAudio, preferredTrackID: kCMPersistentTrackID_Invalid)
-            try! compositionAudioTrack.insertTimeRange(audioTimeRange, ofTrack: audioAsset.tracksWithMediaType(AVMediaTypeAudio).first!, atTime: audioTrack.audioTime!)
+            do {
+                try compositionAudioTrack.insertTimeRange(audioTimeRange, ofTrack: audioAsset.tracksWithMediaType(AVMediaTypeAudio).first!, atTime: audioTrack.audioTime!)
+            } catch let error {
+                print(error)
+            }
         }
         
         let videoAsset = AVURLAsset(URL: video!.movieURL, options: nil)
